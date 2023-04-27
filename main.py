@@ -15,6 +15,7 @@ colors = {
     "CarolinaBlue": (116, 179, 206),
     "Fulvous": (233, 138, 21),
     "Palatinate": '#59114D',
+    "Ecru": "#C2B280",
 }
 
 # general display configs 
@@ -42,7 +43,7 @@ def Score(score):
 # Snake function
 def Snake(snake_block, snakeBody):
     for x in snakeBody:
-        pygame.draw.rect(display, colors["CarolinaBlue"], [x[0], x[1], snake_block, snake_block])
+        pygame.draw.rect(display, colors["DarkGreen"], [x[0], x[1], snake_block, snake_block])
 
 # Message function
 def Message(msg, color):
@@ -72,7 +73,7 @@ def gameLoop():
 
         while game_close == True:
             # closing screen color
-            display.fill(colors["DarkGreen"])
+            display.fill(colors["Ecru"])
             Message("You Lost! Press Q or to play again press C", colors["Fulvous"]) 
             
             pygame.display.update()
@@ -111,7 +112,7 @@ def gameLoop():
         # incrementing the coordinates and appending to the snake
         x1 += x1_change
         y1 += y1_change
-        display.fill(colors["DarkGreen"])
+        display.fill(colors["Ecru"])
         pygame.draw.rect(display,colors["Palatinate"], [food_x,food_y,snake_block,snake_block])
         snake_Head = []
         snake_Head.append(x1)
@@ -141,3 +142,4 @@ def gameLoop():
     quit()
 
 gameLoop()
+    
